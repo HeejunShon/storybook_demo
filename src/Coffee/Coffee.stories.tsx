@@ -10,7 +10,7 @@ export default {
 };
 
 export const coffee = () => {
-  const name = text("children", "PLANZ COFFEE");
+  const name = text("name", "PLANZ COFFEE");
   const price = select("price", ["2000원", "2300원", "2800원"], "2300원");
 
   return <Coffee name={name} price={price}></Coffee>;
