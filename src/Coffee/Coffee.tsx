@@ -2,20 +2,18 @@
 import { jsx, css } from "@emotion/core";
 
 type CoffeeProps = {
+  url: string;
   name: string;
   price: string;
 };
 
-const Coffee = ({ name, price }: CoffeeProps) => {
+const Coffee = ({ url, name, price }: CoffeeProps) => {
   return (
     <div css={style}>
-      <img
-        src="https://www.jbmugs.com/wp-content/uploads/2019/02/Disposable-Takeout-Coffee-Cup-Kraft-Paper-Cartoon-Coffee-Sleeve-Heat-Insulation-Hot-Drink-Mug-Takeaway-Wrapper-2.jpg"
-        width="100%"
-        height="80%"
-        alt="coffee"
-      />
-      <div css={wrapper}>
+      <div css={imageWrapper}>
+        <img src={url} width="100%" height="100%" alt="coffee" />
+      </div>
+      <div css={descriptionWrapper}>
         <div css={[item, names]}>{name}</div>
         <div css={[item, prices]}>{price}</div>
       </div>
@@ -32,10 +30,15 @@ const style = css`
   border: 1px solid black;
 
   background-color: #efefef;
-  background-size: contain;
+  background-size: 100% 80%;
 `;
 
-const wrapper = css`
+const imageWrapper = css`
+  height: 80%;
+  background-color: #cccacb;
+`;
+
+const descriptionWrapper = css`
   display: flex;
   height: 18%;
   justify-content: center;
