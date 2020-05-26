@@ -1,5 +1,5 @@
 module.exports = {
-  stories: ['../src/**/*.stories.js'],
+  stories: ['../src/**/*.stories.(js|mdx|tsx)'], // mdx 및 tsx 포함
   addons: [
     '@storybook/preset-create-react-app',
     '@storybook/addon-actions',
